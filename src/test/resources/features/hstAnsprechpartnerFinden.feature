@@ -1,7 +1,7 @@
-
+@FNW-557
 Feature: Finden Ansprechpartner
-
-  Scenario: Ansprechpartner plz 63263
+  @FNW-556
+  Scenario:
     When user is on the hst Page
     And user deny to Cookies
     And user write the Plz and Enter

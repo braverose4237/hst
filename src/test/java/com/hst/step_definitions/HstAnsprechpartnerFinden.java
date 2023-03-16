@@ -16,16 +16,19 @@ public class HstAnsprechpartnerFinden {
     @When("user is on the hst Page")
     public void user_is_on_the_hst_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        BrowserUtils.sleep(3);
+        BrowserUtils.sleep(1);
     }
     @When("user write the Plz and Enter")
     public void user_write_the_plz_and_enter() {
         System.out.println("plz ye geldik");
-        Driver.getDriver().findElement(By.xpath("//input[@id='search-query']")).sendKeys("63263");
+        basePage.plz.sendKeys("63263");
+        //Driver.getDriver().findElement(By.xpath("//input[@id='search-query']")).sendKeys("63263");
         System.out.println("tıklıyorum");
-       Driver.getDriver().findElement(By.xpath("//button[@class='btn btn-info form-control-sm']")).click();
-        BrowserUtils.sleep(1);
-
+        basePage.search.click();
+       //Driver.getDriver().findElement(By.xpath("//button[@class='btn btn-info form-control-sm']")).click();
+        BrowserUtils.sleep(3);
+        //WebElement a=Driver.getDriver().findElement(By.xpath("(//small[(.)])[2])"));
+        //System.out.println(a.getText());
     }
 
 
@@ -42,7 +45,8 @@ public class HstAnsprechpartnerFinden {
     @And("user deny to Cookies")
     public void userDenyToCookies() {
         System.out.println("user deny to Cookies");
-        Driver.getDriver().findElement(By.xpath("//button[@class='cmplz-btn cmplz-deny']")).click();
+        basePage.CookiesDeny.click();
+        //Driver.getDriver().findElement(By.xpath("//button[@class='cmplz-btn cmplz-deny']")).click();
     }
 
     @Then("check user on the facebook WebSite")
@@ -53,7 +57,8 @@ public class HstAnsprechpartnerFinden {
 
     @And("user click Facebook Link")
     public void userClickFacebookLink() {
-        Driver.getDriver().findElement(By.xpath("//a[@href='https://de-de.facebook.com/hst.systemtechnik']")).click();
+        basePage.facebook.click();
+        //Driver.getDriver().findElement(By.xpath("//a[@href='https://de-de.facebook.com/hst.systemtechnik']")).click();
         BrowserUtils.sleep(2);
 
     }
