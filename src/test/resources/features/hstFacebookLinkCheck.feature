@@ -1,5 +1,5 @@
 @FNW-557
-Feature: Finden Ansprechpartner
+Feature: Überprüfen Facebook Link von Hst.de
   @FNW-556
   Scenario:
     When user is on the hst Page
